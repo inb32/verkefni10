@@ -6,6 +6,21 @@ let text; // texti fyrir mynd á forsíðu
 let img; // mynd á forsíðu
 
 let image; // object sem inniheldur núverandi mynd á forsíðu.
+export function el(image, ...children) {
+    const element = document.createElement(image);
+  
+    if (Array.isArray(children)) {
+      children.forEach((child) => {
+        if (typeof child === 'string') {
+          element.appendChild(document.createTextNode(child));
+        } else if (child) {
+          element.appendChild(child);
+        }
+      });
+    }
+  
+    return element;
+  }
 
 /*
  * Sækir nýja Mynd af handahófi frá Nasa API og birtir hana á forsíðunni

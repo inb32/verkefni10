@@ -37,9 +37,6 @@ function contentLoaded(){
         <h2 class="apod__title">${data.title}</h2>
         <p class="apod__text">${data.explanation}</p>
         ` )
-
-    
-
     });
 }
 
